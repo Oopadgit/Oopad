@@ -1,12 +1,24 @@
-<p align="center"><img src="public/oopad.png" width="120" alt="Oopad logo" /></p>
+<a href="https://oopad.lat"><img src="docs/assets/oopad-banner.png" width="100%" alt="Oopad - Open ideas become communities - Discover repositories and launch on Robinhood Chain" /></a>
 
-# Oopad
+<h1 align="center">Oopad</h1>
+<p align="center"><strong>A source-to-community launch workspace on Robinhood Chain</strong></p>
 
-A source-to-community launch workspace on Robinhood Chain
+<p align="center">
+  <a href="https://oopad.lat">Open Oopad</a> &nbsp; / &nbsp;
+  <a href="https://oopad.lat/docs">Product docs</a> &nbsp; / &nbsp;
+  <a href="docs/GETTING_STARTED.md">Get started</a> &nbsp; / &nbsp;
+  <a href="docs/ARCHITECTURE.md">Architecture</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Oopadgit/Oopad/actions/workflows/ci.yml"><img src="https://github.com/Oopadgit/Oopad/actions/workflows/ci.yml/badge.svg?branch=main" alt="Build and test status" /></a>
+</p>
 
 Find public AI repositories, turn a source into a community-token draft, review a stock-token or ETH pairing, and authorize a Pons launch from your own wallet
 
-[Website](https://oopad.lat) | [Product docs](https://oopad.lat/docs) | [Getting started](docs/GETTING_STARTED.md) | [Architecture](docs/ARCHITECTURE.md)
+| Discover a source | Shape the launch | Follow the market |
+| --- | --- | --- |
+| Search public repositories and inspect the original code | Edit your draft, review the quote asset and confirm with your wallet | Explore observed launches, watchlists and indexed pool candles |
 
 ## Explore The Code
 
