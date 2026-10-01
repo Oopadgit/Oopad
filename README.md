@@ -16,9 +16,11 @@
 
 Find public AI repositories, turn a source into a community-token draft, review a stock-token or ETH pairing, and authorize a Pons launch from your own wallet
 
-| Discover a source | Shape the launch | Follow the market |
-| --- | --- | --- |
-| Search public repositories and inspect the original code | Edit your draft, review the quote asset and confirm with your wallet | Explore observed launches, watchlists and indexed pool candles |
+**Discover a source** - Search public repositories and inspect the original code
+
+**Shape the launch** - Edit your draft, review the quote asset and confirm with your wallet
+
+**Follow the market** - Explore observed launches, watchlists and indexed pool candles
 
 ## Explore The Code
 
