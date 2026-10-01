@@ -1,0 +1,148 @@
+import{r as s,j as l}from"./index-DGTlyxgF.js";const N=`
+  attribute vec2 aPosition;
+  varying vec2 vUv;
+
+  void main() {
+    vUv = aPosition * 0.5 + 0.5;
+    gl_Position = vec4(aPosition, 0.0, 1.0);
+  }
+`,H=`
+  precision highp float;
+
+  varying vec2 vUv;
+  uniform float uTime;
+  uniform float uHover;
+  uniform float uLight;
+  uniform vec2 uSize;
+
+  float hash21(vec2 p) {
+    p = fract(p * vec2(443.897, 441.423));
+    p += dot(p, p + 19.19);
+    return fract(p.x * p.y);
+  }
+
+  float boxSD(vec2 p, vec2 b, float r) {
+    vec2 d = abs(p) - b + r;
+    return length(max(d, 0.0)) + min(max(d.x, d.y), 0.0) - r;
+  }
+
+  void main() {
+    vec2 p = (vUv - 0.5) * uSize;
+    float radius = uSize.y * 0.5;
+    float sd = boxSD(p, uSize * 0.5, radius);
+    float mask = 1.0 - smoothstep(-1.2, 0.6, sd);
+    if (mask < 0.004) discard;
+
+    float t = uTime;
+    vec2 q = p / uSize.y;
+    float aspect = uSize.x / uSize.y;
+
+    vec3 darkPlate = mix(vec3(0.028, 0.022, 0.028), vec3(0.068, 0.050, 0.056), vUv.y);
+    vec3 lightPlate = mix(vec3(0.930, 0.884, 0.842), vec3(0.985, 0.957, 0.925), vUv.y);
+    vec3 col = mix(darkPlate, lightPlate, uLight);
+
+    float s = q.x + q.y * 1.15;
+    float rays = pow(max(0.0, sin(s * 3.6 - t * 0.50)), 1.7) * 0.62
+               + pow(max(0.0, sin(s * 8.1 + t * 0.29 + 1.3)), 2.2) * 0.38;
+    float head = (fract(t * 0.11) * 2.4 - 1.2) * aspect * 0.5;
+    rays *= 0.22 + 1.15 * exp(-pow((q.x - head) * 1.30, 2.0));
+    vec3 rayInk = mix(vec3(1.00, 0.82, 0.56), vec3(0.48, 0.25, 0.24), uLight);
+    col += rayInk * rays * (0.20 + 0.42 * uHover);
+
+    float motes = 0.0;
+    for (int i = 0; i < 2; i++) {
+      float fi = float(i);
+      vec2 g = q * (4.2 + fi * 2.4) + vec2(fi * 7.3, -t * (0.26 + fi * 0.15) + fi * 3.1);
+      vec2 cell = floor(g);
+      vec2 f = fract(g) - 0.5;
+      float hs = hash21(cell + fi * 17.0);
+      if (hs < 0.45) continue;
+      vec2 offset = (vec2(hs, fract(hs * 31.7)) - 0.5) * 0.62;
+      float twinkle = 0.30 + 0.70 * sin(t * (1.3 + hs * 2.2) + hs * 40.0);
+      motes += smoothstep(0.20, 0.02, length(f - offset)) * max(twinkle, 0.0) * (0.30 + 0.70 * hs);
+    }
+    vec3 moteInk = mix(vec3(1.00, 0.95, 0.86), vec3(0.34, 0.18, 0.20), uLight);
+    col += moteInk * motes * (0.34 + 0.60 * uHover);
+
+    float alpha = mask * (0.88 + 0.12 * uHover);
+    gl_FragColor = vec4(col * alpha, alpha);
+  }
+`,O=`
+  .threeui-raking-light-pill-stage {
+    --threeui-raking-light-pill-ink: #fff;
+    --threeui-raking-light-pill-edge: rgba(255, 255, 255, .26);
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+    place-items: center;
+    overflow: hidden;
+    isolation: isolate;
+    background: #160d0c;
+  }
+  .threeui-raking-light-pill-stage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(circle at 68% 36%, rgba(126, 66, 43, .18), transparent 31%),
+      radial-gradient(circle at 28% 74%, rgba(72, 25, 18, .28), transparent 38%),
+      linear-gradient(132deg, #120b0a 0%, #21100d 52%, #0f0909 100%);
+  }
+  .threeui-raking-light-pill {
+    position: relative;
+    display: inline-flex;
+    height: 45.9px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 23.4px;
+    overflow: hidden;
+    border: 1px solid var(--threeui-raking-light-pill-edge);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--threeui-raking-light-pill-ink);
+    font: 400 18px/1 "Switzer", "Neue Montreal", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: border-color .45s cubic-bezier(.2, .75, .25, 1), transform .6s cubic-bezier(.2, .75, .25, 1);
+    -webkit-font-smoothing: antialiased;
+  }
+  .threeui-raking-light-pill canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+  .threeui-raking-light-pill span {
+    position: relative;
+    z-index: 1;
+  }
+  .threeui-raking-light-pill:hover {
+    border-color: rgba(255, 255, 255, .5);
+  }
+  .threeui-raking-light-pill:focus-visible {
+    outline: 2px solid var(--threeui-raking-light-pill-ink);
+    outline-offset: 5px;
+  }
+  .threeui-raking-light-pill-stage[data-mode="light"] {
+    --threeui-raking-light-pill-ink: #3f2c33;
+    --threeui-raking-light-pill-edge: rgba(63, 44, 51, .28);
+    background: #efe6dc;
+  }
+  .threeui-raking-light-pill-stage[data-mode="light"]::before {
+    background:
+      radial-gradient(circle at 68% 36%, rgba(162, 102, 78, .13), transparent 31%),
+      radial-gradient(circle at 28% 74%, rgba(102, 53, 49, .08), transparent 38%),
+      linear-gradient(132deg, #f4ece3 0%, #e7d9cd 52%, #f8f2eb 100%);
+  }
+  .threeui-raking-light-pill-stage[data-mode="light"] .threeui-raking-light-pill:hover {
+    border-color: rgba(63, 44, 51, .5);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .threeui-raking-light-pill { transition-duration: .01ms; }
+  }
+`;function U(i,c,h){const r=i.createShader(c);return r?(i.shaderSource(r,h),i.compileShader(r),i.getShaderParameter(r,i.COMPILE_STATUS)?r:(i.deleteShader(r),null)):null}function j({mode:i="dark",hue:c=0,saturation:h=1,brightness:r=1,className:m="",style:T}){const b=s.useRef(null),x=s.useRef(null),o=s.useRef(0);return s.useEffect(()=>{const a=x.current,k=b.current;if(!a||!k)return;const e=a.getContext("webgl",{alpha:!0,antialias:!0,depth:!1,premultipliedAlpha:!0});if(!e)return;const d=U(e,e.VERTEX_SHADER,N),u=U(e,e.FRAGMENT_SHADER,H);if(!d||!u)return;const t=e.createProgram();if(!t||(e.attachShader(t,d),e.attachShader(t,u),e.linkProgram(t),!e.getProgramParameter(t,e.LINK_STATUS)))return;const S=e.createBuffer();e.bindBuffer(e.ARRAY_BUFFER,S),e.bufferData(e.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),e.STATIC_DRAW);const R=e.getAttribLocation(t,"aPosition"),F=e.getUniformLocation(t,"uTime"),z=e.getUniformLocation(t,"uHover"),_=e.getUniformLocation(t,"uLight"),M=e.getUniformLocation(t,"uSize");e.useProgram(t),e.enableVertexAttribArray(R),e.vertexAttribPointer(R,2,e.FLOAT,!1,0,0),e.enable(e.BLEND),e.blendFunc(e.ONE,e.ONE_MINUS_SRC_ALPHA);let g=1,f=1;const A=()=>{const n=a.getBoundingClientRect(),L=Math.min(window.devicePixelRatio||1,2);g=Math.max(1,n.width),f=Math.max(1,n.height),a.width=Math.max(1,Math.round(g*L)),a.height=Math.max(1,Math.round(f*L)),e.viewport(0,0,a.width,a.height)};A();const w=new ResizeObserver(A);w.observe(a);const I=window.matchMedia("(prefers-reduced-motion: reduce)");let y=!0;const P=new IntersectionObserver(([n])=>{y=n?.isIntersecting??!0},{rootMargin:"80px"});P.observe(k);const B=performance.now();let p=0,v=0;const E=n=>{p+=(o.current-p)*.085,y&&!document.hidden&&(e.clearColor(0,0,0,0),e.clear(e.COLOR_BUFFER_BIT),e.useProgram(t),e.uniform1f(F,I.matches?2.4:(n-B)/1e3),e.uniform1f(z,p),e.uniform1f(_,i==="light"?1:0),e.uniform2f(M,g,f),e.drawArrays(e.TRIANGLE_STRIP,0,4)),v=requestAnimationFrame(E)};return v=requestAnimationFrame(E),()=>{cancelAnimationFrame(v),P.disconnect(),w.disconnect(),e.deleteBuffer(S),e.deleteProgram(t),e.deleteShader(d),e.deleteShader(u)}},[i]),l.jsxs("div",{ref:b,className:`threeui-background threeui-raking-light-pill-stage${m?` ${m}`:""}`,"data-mode":i,"data-variant":"raking-light-pill",style:T,children:[l.jsx("style",{children:O}),l.jsxs("button",{className:"threeui-raking-light-pill",type:"button",style:{filter:`hue-rotate(${c}deg) saturate(${h}) brightness(${r})`},onPointerEnter:()=>{o.current=1},onPointerLeave:()=>{o.current=0},onBlur:()=>{o.current=0},onFocus:()=>{o.current=1},children:[l.jsx("canvas",{ref:x,"aria-hidden":"true"}),l.jsx("span",{children:"Field Notes 2026"})]})]})}export{j as RakingLightPillButton};

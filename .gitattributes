@@ -1,0 +1,8 @@
+* text=auto eol=lf
+/src/effects/star-portal/sources/** -text
+/src/effects/star-portal/authored/** -text
+*.png binary
+*.jpg binary
+*.webp binary
+*.woff binary
+*.woff2 binary

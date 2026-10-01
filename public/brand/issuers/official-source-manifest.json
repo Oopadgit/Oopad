@@ -1,0 +1,50 @@
+{
+  "verifiedAt": "2026-09-13",
+  "purpose": "Identify the issuer of an exact registered stock-token quote. These marks do not imply issuer endorsement or partnership. Trademark rights remain with their respective owners; official source provenance is not a blanket trademark license.",
+  "processing": "Original downloaded bytes, unchanged. No generated artwork, resizing, conversion, recoloring, or third-party credentials.",
+  "items": [
+    {
+      "address": "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
+      "symbol": "AAPL",
+      "company": "Apple",
+      "path": "/brand/issuers/official-AAPL.png",
+      "sourcePage": "https://www.apple.com/",
+      "sourceDeclaration": "Organization JSON-LD logo",
+      "sourceUrl": "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202609042047",
+      "contentType": "image/png",
+      "bytes": 10070,
+      "width": 302,
+      "height": 302,
+      "sha256": "4ea439d373443bf940df4c21ddfbd479fcaf3ecbe61928fa16004c67c28834cd"
+    },
+    {
+      "address": "0x12f190a9f9d7d37a250758b26824b97ce941bf54",
+      "symbol": "AMZN",
+      "company": "Amazon",
+      "path": "/brand/issuers/official-AMZN.png",
+      "sourcePage": "https://www.aboutamazon.com/",
+      "sourceDeclaration": "rel=apple-touch-icon",
+      "sourceUrl": "https://www.aboutamazon.com/_next/static/media/apple-touch-icon.706b1b87.png",
+      "contentType": "image/png",
+      "bytes": 4366,
+      "width": 180,
+      "height": 180,
+      "sha256": "f8184c36ab5439a22007f105d0366f10bbb782ab1d379e38759e452965c18805"
+    },
+    {
+      "address": "0xd0601ce157db5bdc3162bbac2a2c8af5320d9eec",
+      "symbol": "NVDA",
+      "company": "NVIDIA",
+      "path": "/brand/issuers/official-NVDA.ico",
+      "sourcePage": "https://nvidianews.nvidia.com/",
+      "sourceDeclaration": "rel=shortcut icon",
+      "sourceUrl": "https://nvidianews.nvidia.com/media/sites/219/images/favicon.ico",
+      "contentType": "image/x-icon",
+      "bytes": 25214,
+      "width": 48,
+      "height": 48,
+      "frames": 9,
+      "sha256": "bedcb14e0470ff8abe26405a630e9604ac4fa581b385a7cfb00420c22f541b6e"
+    }
+  ]
+}

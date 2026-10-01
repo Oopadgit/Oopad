@@ -1,0 +1,111 @@
+{
+  "requestedRevision": "6f56c4f91814",
+  "note": "First-party published artifacts and public repository sources. The advertised aggregate revision has no published hash recipe; individual downloaded hashes are recorded, not asserted to equal it. Missing TSX files are represented by their first-party compiled modules. Raw documents are immutable; application adaptation lives outside this folder.",
+  "files": [
+    {
+      "path": "ShaderButtons.tsx.upstream",
+      "url": "https://raw.githubusercontent.com/MengTo/threeui/main/src/shaders/shader-buttons/ShaderButtons.tsx",
+      "bytes": 2217,
+      "sha256": "b2599e35ee59ce4acec0fe868fbe34501b4eb1096a3fab80c6ede5d6876fece5"
+    },
+    {
+      "path": "RakingLightPillButton.tsx.upstream",
+      "url": "https://raw.githubusercontent.com/MengTo/threeui/main/src/shaders/shader-buttons/RakingLightPillButton.tsx",
+      "status": 404
+    },
+    {
+      "path": "NeuformIsolatedEffects.tsx.upstream",
+      "url": "https://raw.githubusercontent.com/MengTo/threeui/main/src/shaders/neuform-isolated/NeuformIsolatedEffects.tsx",
+      "bytes": 60960,
+      "sha256": "dfdb68e7957ebe7fb4e59f07ad54cd7bba7047a424fc14ab026211b6c2a58402"
+    },
+    {
+      "path": "imaginie-starfield.html",
+      "url": "https://raw.githubusercontent.com/MengTo/threeui/main/src/shaders/neuform-isolated/sources/imaginie-starfield.html",
+      "bytes": 18018,
+      "sha256": "002199215e124a85177585fc5cb84333f471562176f94c8d8e4456c79d721295"
+    },
+    {
+      "path": "ignition-terminal.html",
+      "url": "https://raw.githubusercontent.com/MengTo/threeui/main/src/shaders/neuform-isolated/sources/ignition-terminal.html",
+      "bytes": 12813,
+      "sha256": "05313d191cc11ca0c7600452e72ad14b4fc6581627689c209a5f22a1bfa6a8ea"
+    },
+    {
+      "path": "valence-core.html",
+      "url": "https://raw.githubusercontent.com/MengTo/threeui/main/src/shaders/neuform-isolated/sources/valence-core.html",
+      "bytes": 19010,
+      "sha256": "26b21d4972805733a2441355edb56576fa911f135ccf746ebcc927a0b1e3b975"
+    },
+    {
+      "path": "aetheris-labs.html",
+      "url": "https://raw.githubusercontent.com/MengTo/threeui/main/src/shaders/neuform-isolated/sources/aetheris-labs.html",
+      "bytes": 15926,
+      "sha256": "eea617fe0e37a79be7aee44f00a53ec3ae41e006e771a8aad53acce3648147e0"
+    },
+    {
+      "path": "nexus-tactile.html",
+      "url": "https://raw.githubusercontent.com/MengTo/threeui/main/src/shaders/neuform-isolated/sources/nexus-tactile.html",
+      "bytes": 17473,
+      "sha256": "1811a6408fb09421665d772eca4106162e10bfc038ec948324d0250f5dec9cb4"
+    },
+    {
+      "path": "thinking-button.html",
+      "url": "https://raw.githubusercontent.com/MengTo/threeui/main/src/shaders/neuform-isolated/sources/thinking-button.html",
+      "bytes": 11664,
+      "sha256": "194da3529f2f80993db555de0387fc1e628bf8c216371803603750959a4fb11a"
+    },
+    {
+      "path": "SelectedButtonStudies.tsx.upstream",
+      "url": "https://raw.githubusercontent.com/MengTo/threeui/main/src/shaders/shader-buttons/SelectedButtonStudies.tsx",
+      "status": 404
+    },
+    {
+      "path": "button-index.html",
+      "url": "https://raw.githubusercontent.com/MengTo/threeui/main/src/shaders/shader-buttons/sources/button-index.html",
+      "status": 404
+    },
+    {
+      "path": "ShaderButtons-BHnt6Snj.js.upstream",
+      "url": "https://threeui.com/assets/ShaderButtons-BHnt6Snj.js",
+      "bytes": 2138,
+      "sha256": "73869596362e77eddd6826aa137a82ced8015a1e03c930733e3e44d613177491"
+    },
+    {
+      "path": "RakingLightPillButton-DYmHe2Uz.js.upstream",
+      "url": "https://threeui.com/assets/RakingLightPillButton-DYmHe2Uz.js",
+      "bytes": 7695,
+      "sha256": "c41ffe981342cfb81468ca82eb9662cda1ecb0d794e96fea5f14f4edd917e58c"
+    },
+    {
+      "path": "NeuformIsolatedEffects-CjBYReiF.js.upstream",
+      "url": "https://threeui.com/assets/NeuformIsolatedEffects-CjBYReiF.js",
+      "bytes": 572998,
+      "sha256": "9d6638d3c2baaf019282a04659f7bac602fea834258104334623295faf4663af"
+    },
+    {
+      "path": "SelectedButtonStudies-fX9ZNVBy.js.upstream",
+      "url": "https://threeui.com/assets/SelectedButtonStudies-fX9ZNVBy.js",
+      "bytes": 799780,
+      "sha256": "12b5d6197dd717f541d42f05b4e4768f79b170d94de9d111375598b6bed9c15d"
+    },
+    {
+      "path": "button-index.html",
+      "extractedFrom": "SelectedButtonStudies-fX9ZNVBy.js",
+      "bytes": 787537,
+      "sha256": "6754471bc12deb059ac187209afa616e816e040fa25ce557ab4ef40b95404a58"
+    },
+    {
+      "path": "ShaderButtonStudies-P15TzB3Q.js.upstream",
+      "url": "https://threeui.com/assets/ShaderButtonStudies-P15TzB3Q.js",
+      "bytes": 883552,
+      "sha256": "16aba986a955d366143e1c13af04bee97ec88089140bc3f66e380efcd7935ec0"
+    },
+    {
+      "path": "LICENSE.upstream",
+      "url": "https://raw.githubusercontent.com/MengTo/threeui/main/LICENSE",
+      "bytes": 1064,
+      "sha256": "b2a071ba22fefd803f4e9d1f5c777dd79c62d191695586a1a73fd4d0ebd051c6"
+    }
+  ]
+}

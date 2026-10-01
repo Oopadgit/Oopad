@@ -1,0 +1,208 @@
+.header.oopad-header {
+  width: calc(100% - 48px);
+  max-width: 1380px;
+  height: 72px;
+  margin: 14px auto;
+  padding: 0 16px 0 12px;
+  position: sticky;
+  top: 14px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 28px;
+  border: 1px solid #35363a;
+  border-radius: 8px;
+  background: #202124;
+  color: #f8f9fc;
+  box-shadow: 0 4px 8px #1b22300a, inset 0 1px #ffffff0a;
+  transition: box-shadow 220ms;
+  isolation: isolate;
+}
+.header.oopad-header[data-scrolled="true"] {
+  box-shadow: 0 10px 30px #18203430, inset 0 1px #ffffff0a;
+}
+.oopad-header .brand {
+  justify-self: start;
+  gap: 11px;
+  color: #fff;
+}
+.oopad-header .brand > b { font-size: 27px; font-weight: 750; }
+.oopad-header .brand-symbol {
+  width: 49px;
+  height: 44px;
+  border-radius: 5px;
+  background: #294cff;
+  box-shadow: inset 0 1px #ffffff36;
+}
+.oopad-header .brand-symbol img {
+  width: 61px;
+  height: 61px;
+  left: -6px;
+  top: -9px;
+  filter: grayscale(1) invert(1) contrast(9);
+  mix-blend-mode: screen;
+  transition: transform 220ms;
+}
+.oopad-header .brand:hover .brand-symbol img { transform: rotate(-8deg) scale(.93); }
+.header.oopad-header nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+}
+.header.oopad-header nav a {
+  position: relative;
+  min-height: 44px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #bfc1c8;
+  font-size: 13px;
+  font-weight: 550;
+  border-radius: 4px;
+  background: transparent;
+  transition: color 160ms, background 160ms;
+}
+.header.oopad-header nav a > svg { display: block; width: 16px; color: #9196a5; }
+.header.oopad-header nav a:hover { color: #fff; background: #303136; }
+.header.oopad-header nav a.active { color: #fff; background: #303136; }
+.header.oopad-header nav a.active > svg { color: #9faeff; }
+.header.oopad-header nav a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 2px;
+  bottom: -8px;
+  left: 15px;
+  right: 15px;
+  background: #7890ff;
+  transform: scaleX(0);
+  transition: transform 180ms;
+}
+.header.oopad-header nav a.active::after { transform: scaleX(1); }
+.header.oopad-header nav .mobile-launch,
+.header.oopad-header nav a > .nav-direction { display: none; }
+.oopad-header .header-actions { display: flex; gap: 9px; justify-self: end; }
+.oopad-header .header-launch {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 14px;
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+  background: #294cff;
+  border: 1px solid #4564ff;
+  border-radius: 5px;
+  box-shadow: inset 0 1px #ffffff26;
+  color: #fff;
+  transition: background 160ms, transform 160ms;
+}
+.oopad-header .header-launch:hover { background: #3e5cfc; transform: translateY(-1px); }
+.oopad-header .header-launch:active { transform: translateY(1px); }
+.oopad-header .header-launch svg { transition: transform 220ms; }
+.oopad-header .header-launch:hover svg { transform: rotate(90deg); }
+.header.oopad-header .wallet-button {
+  min-height: 44px;
+  max-width: 192px;
+  padding: 0 13px;
+  border: 1px solid #52545d;
+  border-radius: 5px;
+  background: #292a2f;
+  color: #f8f9fc;
+  box-shadow: inset 0 1px #ffffff08;
+  font-size: 12px;
+  font-weight: 550;
+  gap: 9px;
+  white-space: nowrap;
+  transform: none;
+}
+.header.oopad-header .wallet-button > span { overflow: hidden; text-overflow: ellipsis; }
+.header.oopad-header .wallet-button:hover { background: #383a43; border-color: #747782; transform: none; }
+.header.oopad-header .wallet-button svg { width: 17px; height: 17px; flex-shrink: 0; }
+.header.oopad-header .wallet-button .wallet-logo { width: 22px; height: 22px; }
+.header.oopad-header .mobile-menu { display: none !important; }
+.oopad-header a:focus-visible,
+.oopad-header button:focus-visible { outline-color: #a1b0ff; }
+.oopad-header .wallet-dialog { color: #202124; }
+@media (max-width: 1120px) {
+  .header.oopad-header { gap: 15px; grid-template-columns: 1fr auto auto; }
+  .header.oopad-header nav { gap: 1px; }
+  .header.oopad-header nav a { padding: 0 10px; }
+  .header.oopad-header nav a > svg:not(.nav-direction) { display: none; }
+  .oopad-header .brand > b { font-size: 24px; }
+}
+@media (max-width: 900px) {
+  .header.oopad-header { grid-template-columns: 1fr auto; gap: 10px; }
+  .header.oopad-header .mobile-menu {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid #52545d;
+    border-radius: 5px;
+    background: #292a2f;
+    color: #fff;
+  }
+  .header.oopad-header .mobile-menu:hover,
+  .header.oopad-header .mobile-menu[aria-expanded="true"] { background: #3a3c45; }
+  .header.oopad-header nav { display: none; }
+  .header.oopad-header nav.nav-open {
+    display: flex;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    padding: 10px;
+    gap: 4px;
+    flex-direction: column;
+    align-items: stretch;
+    max-height: calc(100dvh - 116px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: #202124;
+    border: 1px solid #41434a;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px #121b3930;
+    transform-origin: 50% 0;
+    animation: oopad-menu-enter 180ms ease-out;
+  }
+  .header.oopad-header nav.nav-open a {
+    min-height: 55px;
+    padding: 0 15px;
+    gap: 14px;
+    flex-shrink: 0;
+    font-size: 15px;
+  }
+  .header.oopad-header nav.nav-open a > svg { display: block; width: 18px; height: 18px; }
+  .header.oopad-header nav.nav-open a > .nav-direction { margin-left: auto; }
+  .header.oopad-header nav.nav-open a::after { display: none; }
+  .header.oopad-header nav.nav-open .mobile-launch { display: flex; background: #294cff; color: #fff; }
+  .header.oopad-header nav.nav-open .mobile-launch svg { color: #fff; }
+  .oopad-header .header-launch { display: none; }
+}
+@media (max-width: 600px) {
+  .header.oopad-header { width: calc(100% - 24px); height: 64px; padding: 0 9px; margin: 12px auto; top: 12px; }
+  .oopad-header .brand { gap: 9px; }
+  .oopad-header .brand > b { font-size: 23px; }
+  .oopad-header .brand-symbol { width: 44px; height: 40px; }
+  .oopad-header .brand-symbol img { width: 56px; height: 56px; left: -6px; top: -8px; }
+  .oopad-header .header-actions { gap: 7px; }
+  .header.oopad-header .wallet-button { width: 44px; height: 44px; min-width: 44px; padding: 0; }
+  .header.oopad-header .wallet-button > span { display: none; }
+  .header.oopad-header .wallet-button svg { width: 19px; height: 19px; }
+}
+@keyframes oopad-menu-enter {
+  from { transform: translateY(-5px) scale(.99); }
+  to { transform: translateY(0) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .header.oopad-header *, .header.oopad-header { animation: none; transition: none; }
+}

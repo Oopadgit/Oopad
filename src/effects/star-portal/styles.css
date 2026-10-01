@@ -1,0 +1,83 @@
+/* Authored .holo-btn material and hover from imaginie-starfield.html.
+   Host sizing, state contrast and icon/label layout remain Oopad's. */
+html body #root [data-shader-button="star-portal"] {
+  isolation: isolate;
+  background: linear-gradient(135deg, rgba(255,255,255,.9) 0%, rgba(240,220,205,.9) 50%, rgba(220,240,255,.9) 100%);
+  box-shadow: 0 0 20px rgba(255,255,255,.15), inset 0 1px 0 rgba(255,255,255,.6);
+  transition: box-shadow .4s ease, transform .4s ease, border-color .4s ease;
+  color: #0d0a12;
+  border: 1px solid #c2c8d2;
+  border-radius: 999px;
+  overflow: hidden;
+  text-shadow: none;
+}
+html body #root [data-shader-position="static"] { position: relative; }
+html body #root [data-shader-button="star-portal"]:not(:disabled):not([aria-disabled="true"]):is(:hover,:focus-visible) {
+  transform: translateY(-1px);
+  box-shadow: 0 0 30px rgba(255,220,180,.35), inset 0 1px 0 rgba(255,255,255,.8);
+  border-color: #778cae;
+  color: #0d0a12;
+}
+html body #root [data-shader-button="star-portal"]:focus-visible {
+  outline: 2px solid #2046ef;
+  outline-offset: 3px;
+}
+html body #root [data-shader-button="star-portal"]:not(:disabled):active {
+  transform: translateY(1px);
+}
+html body #root [data-shader-button="star-portal"]:is(.active,.selected,[aria-pressed="true"],[aria-selected="true"]) {
+  border-color: #2046ef;
+  box-shadow: inset 0 0 0 1px #2046ef, inset 0 1px 0 rgba(255,255,255,.6);
+  color: #1231b2;
+}
+html body #root [data-shader-button="star-portal"]:is(:disabled,[aria-disabled="true"]) {
+  opacity: .5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+html body #root [data-shader-button="star-portal"] > .oopad-star-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: inherit;
+  z-index: -1;
+  pointer-events: none;
+  background: transparent;
+}
+html body #root [data-shader-button="star-portal"] .button-arrow {
+  background: transparent;
+  color: inherit;
+}
+/* Large asset/provider rows keep room for their artwork and secondary labels. */
+html body #root [data-shader-button="star-portal"]:is(.launch-asset,.wallet-choice,.file-picker) {
+  border-radius: 8px;
+}
+html body #root [data-shader-button="star-portal"].text-link {
+  min-height: 36px;
+  padding: 8px 14px;
+  gap: 8px;
+}
+html body #root .opening-links [data-shader-button="star-portal"] {
+  min-height: 40px;
+  padding: 9px 15px;
+}
+html body #root .launch-asset-tabs [data-shader-button="star-portal"] {
+  min-height: 32px;
+  padding: 6px 12px;
+}
+html body #root .pad-review > .wallet-button {
+  display: flex;
+  width: 100%;
+  margin-top: 12px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html body #root [data-shader-button="star-portal"] { transition: none; }
+  html body #root [data-shader-button="star-portal"]:is(:hover,:focus-visible,:active) { transform: none; }
+}

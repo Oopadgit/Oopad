@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.vercel/
+.env*
+!.env.example
+artifacts/
+coverage/
+playwright-report/
+test-results/
+*.log
+*.tsbuildinfo
+*.pem
+*.key
+.DS_Store
+Thumbs.db
